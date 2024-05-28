@@ -45,7 +45,7 @@ console.log(validate(email));
 // Hromadná validace
 // Pro zapnutí změnit podmínku
 
-if (true) {
+if (false) {
     console.log("--------------------");
     const emails = ["jonas.4holubgmail.com", "jonas.holub@mensagymnzium.cz"];
     console.log("Hromadné ověření " + emails.length + " adres.");
