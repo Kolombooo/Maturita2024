@@ -33,8 +33,11 @@ function validate(email) {
             return false;
         }
 
+        if (name.split("")[0] == ".") {
+            return false;
+        }
+
         return true; // Email prošel všechny kontroly, je validní
-        break; // Ukončit cyklus
     }
 }
 
@@ -45,13 +48,19 @@ console.log(validate(email));
 // Hromadná validace
 // Pro zapnutí změnit podmínku
 
-if (false) {
+if (true) {
     console.log("--------------------");
-    const emails = ["jonas.4holubgmail.com", "jonas.holub@mensagymnzium.cz"];
+    const emails = ["jonas.4holubgmail.com", ".jonas.holub@mensagymnzium.cz"];
     console.log("Hromadné ověření " + emails.length + " adres.");
     console.log("+-----+----------------------------------------------");
     for (i = 0; i < emails.length; i++) {
-        console.log("|" + validate(emails[i]) + " |" + emails[i]);
+        let stat = "";
+        if (validate(emails[i])) {
+            stat = "true ";
+        } else {
+            stat = "false";
+        }
+        console.log("|" + stat + "|" + emails[i]);
     }
     console.log("+-----+----------------------------------------------");
 }
